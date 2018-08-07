@@ -6,14 +6,9 @@ int main()
 {
 	int n=0,x,count=0;
 	cin>>n;
-	char** arr;
-	arr = new char*[n];
-	for (int i = 0;i<n;i++)
-		arr[i] = new char[n];
-
-
-	if (n > 1)
-	{
+	char arr[1000][1000];
+	
+	
 			for (int i = 0; i < n; i++)
 			{
 				for (int j= 0; j < n; j++)
@@ -33,12 +28,7 @@ int main()
 							arr[i][j-1] = '.';
 					}
 				}
-			}
 }
-	else 
-	{
-		cout << 1<<endl<<'C';
-	}
 
 	cout << count<<endl;
 
@@ -52,9 +42,7 @@ int main()
 		cout << endl;
 	}
 
-	for (int i = 0;i<n;i++)
-		delete[] arr[i];
-	delete[] arr;
+
 
 	system("pause");
 	return 0;
