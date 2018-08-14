@@ -4,7 +4,9 @@
 #include<vector>
 using namespace std;
 
-//
+//the main idea is to track thr indeces of the elements while reading them
+//then check if the elements are enough to create teams and 
+//then printing them 
 int main()
 {
 	int n,arr[5000],temp,min1,min2;
