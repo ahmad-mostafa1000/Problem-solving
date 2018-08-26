@@ -3,7 +3,7 @@
 using namespace std;
 const int n=2,m=3;
 
-//explaining pointers examples
+//explaining pointers 
 int main()
 {
 	cout << "- 1-d array"<<endl;
