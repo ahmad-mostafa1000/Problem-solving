@@ -32,7 +32,7 @@ int main()
 				count++;
 			}
 			s1 --;
-			c = 0;
+			i--;
 			right = false;
 			down = true;
 		}
@@ -41,14 +41,13 @@ int main()
 		else if (left) //going left
 		{
 			i--;
-			for (i; i < s1; i--)
+			for (i; i >= 0; i--)
 			{
 				v.push_back(vect[i][j]);
-				c++;
 				count++;
 			}
 			s1 --;
-			c = 0;
+			i++;
 			left = false;
 			up = true;
 		}
@@ -56,14 +55,13 @@ int main()
 		else if (up) //going left
 		{
 			j--;
-			for (j; j < s2; j--)
+			for (j; j >= 0; j--)
 			{
 				v.push_back(vect[i][j]);
-				c++;
 				count++;
 			}
 			s2 --;
-			c = 0;
+			j++;
 			up = false;
 			right = true;
 		}
@@ -78,7 +76,7 @@ int main()
 				count++;
 			}
 			s2--;
-			c = 0;
+			j--;
 			down = false;
 			left = true;
 		}
