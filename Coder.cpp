@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	static int N = 1000;
+	static int N = 1000;//max size
 	int n=0,x,count=0;
 	cin>>n;
 	char arr[N][N];
@@ -33,7 +33,7 @@ int main()
 
 	cout << count<<endl;
 
-
+//printing
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
