@@ -6,15 +6,15 @@ using namespace std;
 int main()
 {
 	vector<int>v;
-	vector<int>::iterator it;
 	bool right=true, left=false, up = false, down = false;
-	int i = 0, j = 0,count=0,c=0;
+	int i = -1, j = 0,count=0,c=0;
 	
 	//input
 	vector<vector<int>> vect{
-		{ 1, 2, 3 },
-		{ 4, 5, 6 },
-		{ 7, 8, 9 } 
+		{ 1, 2, 3 ,4},
+		{  5, 6,7,8 },
+		{ 9,10,11,12 },
+		{13,14,15,16}
 	};
 	//row and columns size
 	int s1 = vect.size();
@@ -25,10 +25,10 @@ int main()
 	{
 		if (right) //going right
 		{
+			i++;
 			for (i; i < s1; i++)
 			{
-				v.push_back(vect[i][j]);
-				c++;
+				cout<<vect[j][i];
 				count++;
 			}
 			s1 --;
@@ -43,7 +43,7 @@ int main()
 			i--;
 			for (i; i >= 0; i--)
 			{
-				v.push_back(vect[i][j]);
+				cout<<vect[j][i];
 				count++;
 			}
 			s1 --;
@@ -52,16 +52,17 @@ int main()
 			up = true;
 		}
 	
-		else if (up) //going left
+		else if (up) //going up
 		{
 			j--;
-			for (j; j >= 0; j--)
+			for (j; j > 0; j--)
 			{
-				v.push_back(vect[i][j]);
+				cout<<vect[j][i];
 				count++;
 			}
 			s2 --;
-			j++;
+			s1++;
+			j++;			
 			up = false;
 			right = true;
 		}
@@ -71,7 +72,7 @@ int main()
 			j++;
 			for (j; j < s2; j++)
 			{
-				v.push_back(vect[i][j]);
+				cout<<vect[j][i];
 				c++;
 				count++;
 			}
@@ -83,10 +84,7 @@ int main()
 	
 	}
 
-	for (int i=0;i<v.size();i++)
-	{
-		cout << v[i]<<" ";
-	}
+	
 	system("pause");
 	return 0;
 }
