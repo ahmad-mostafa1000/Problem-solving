@@ -26,6 +26,7 @@ int main()
 		if (right) //going right
 		{
 			i++;
+			
 			for (i; i < s1; i++)
 			{
 				cout<<vect[j][i];
@@ -36,8 +37,6 @@ int main()
 			right = false;
 			down = true;
 		}
-	
-	
 		else if (left) //going left
 		{
 			i--;
@@ -70,6 +69,8 @@ int main()
 		else  //going down
 		{
 			j++;
+			if (j == s2)
+				s2++;
 			for (j; j < s2; j++)
 			{
 				cout<<vect[j][i];
