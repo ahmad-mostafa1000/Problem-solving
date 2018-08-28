@@ -28,7 +28,7 @@ int main()
 			}
 		}
 
-(count==26) ? cout << "YES	" : cout << "NO";
+(count==26) ? cout << "YES" : cout << "NO";
 
 	system("pause");
 	return 0;
