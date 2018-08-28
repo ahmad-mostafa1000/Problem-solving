@@ -11,7 +11,7 @@ int coverPoints(vector<int> &A, vector<int> &B)
 	int ans = 0;int A1, A2, B1, B2;
 	if (A.size()>1)
 	{
-		for (int i = 0;i<A.size() - 1;i++)
+		for (int i = 0;i<A.size() - 1;i++)// size-1 to if igone last element
 		{
 			ans = ans + (abs(A[i] - A[i + 1])<abs(B[i] - B[i + 1]) ? abs(B[i] - B[i + 1]) : abs(A[i] - A[i + 1]));
 
