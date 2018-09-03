@@ -1,6 +1,5 @@
 #include<iostream>
 #include<vector>
-//under update
 using namespace std;
 
 
