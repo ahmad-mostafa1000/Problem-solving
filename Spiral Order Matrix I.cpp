@@ -8,80 +8,83 @@ int main()
 {
 	vector<int>v;
 	bool right = true, left = false, up = false, down = false;
-	int i = 0, j = 0, count = 0, c = 0;
+	int count = 0;
 
-	//input
+	//test cases 
 	vector<vector<int>> vect{
-		{1, 2},
-		{3, 4},
-		{5, 6 }
-		
+		{1, 2,3,4},
+		{10, 11,12,5},
+		{9,8,7,6 }
 	};
-	//row and columns size
-	int s1 = vect.size();//row
-	int s2 = vect[0].size();//col
 
-	int size = s1*s2; //total number of elements
-	while (count <size)
+	/*vector<vector<int>> vect{
+		{ 1, 2},
+		{6, 3},
+		{ 5, 4}
+	};*/
+
+	/*vector<vector<int>> vect{
+		{ 1, 2,3,4 }
+	
+	};*/
+
+	/*vector<vector<int>> vect{
+		{ 1 }
+	};*/
+
+	//grid boundries
+	int startR = 0;
+	int startC = 0;
+	int endR = vect.size()-1;//row
+	int endC = vect[0].size()-1;//col
+	//iterators
+	int x = 0, y = 0;
+
+	int size = vect[0].size()*vect.size(); //total number of elements
+	while (count<size)
 	{
 		if (right) //going right
 		{
-			int steps = abs(s2 - (i +1));
-			for (i; i <= steps; i++)
+			for (x=startC; x <= endC; x++)
 			{
-				cout << vect[j][i];
-				v.push_back(vect[j][i]);
+				cout << vect[startR][x];
 				count++;
 			}
-			s1--;
-			j++;
-			i--;
+			startR++;
 			right = false;
 			down = true;
 		}
 		else if (left) //going left
 		{
-			int steps = abs(s2 - (i-1));
-			for (i; i >= steps; i--)
+			for (x = endC; x >= startC; x--)
 			{
-				cout << vect[j][i];
-				v.push_back(vect[j][i]);
+				cout << vect[endR][x];
 				count++;
 			}
-			s1--;
-			j--;
-			i++;
+			endR--;
 			left = false;
 			up = true;
 		}
 		else if (up) //going up
 		{
-			int steps = abs(s1 - (j+1));
-			for (j; j >=steps; j--)
+			for (y=endR; y>=startR;y--)
 			{
-				cout << vect[j][i];
-				v.push_back(vect[j][i]);
+				cout << vect[y][startC];
 				count++;
 			}
-			s2--;
-			i++;
-			j++;
+			startC++;
 			up = false;
 			right = true;
 		}
 
 		else  //going down
 		{
-			int steps = abs(s2- (j - 1));
-			for (j; j <= steps; j++)
+			for (y = startR; y <= endR;y++)
 			{
-				cout << vect[j][i];
-				v.push_back(vect[j][i]);
+				cout << vect[y][endC];
 				count++;
 			}
-			s2--;
-			i++;
-			j--;
+			endC--;
 			down = false;
 			left = true;
 		}
