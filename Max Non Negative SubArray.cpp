@@ -10,19 +10,19 @@ int main()
 	vector<int>index;
 	int startindex = 0;
 	int endindex = 0;
-	int max = -1, count = 0, diff1 = 0, diff2 = 0;
+	long long int max = -1, count = 0, diff1 = 0, diff2 = 0;
 	bool negative = false, newsubset = true, zero = false;
 
 	//test cases
 	//vector<int>v = { 0 ,1,-2,-1,2,3,4};
 	
 	//vector<int>v = {-1 ,-2,0 };
-	//vector<int>v = { -1 ,0,0,-1 };
+	//vector<int>v = { -1 ,0,0,-1,1 };
 	
-	//vector<int>v = {-1,1,2,3,4,-1};
+	vector<int>v = { 1967513926, 1540383426, -1303455736, -521595368 };
 	//vector<int>v = { 1,2,3,4};
-	//vector<int>v = { -1};
-	vector<int>v = {-1,1,2,-1,1,1,1};
+	//vector<int>v = {1, 2, 5, -7, 2, 5};
+	//vector<int>v = {-1,1,2,1,-1,1,1,2};
 
 
 	bool check = false;
@@ -51,18 +51,26 @@ int main()
 			{
 				// start-end
 				diff1 = (i - 1) - index.back();
-				diff2 = (index.back() - 1) - (index.back() - 2);
+				int x = index.back() - 1;
+				diff2 = index[index.size() - 2] - index[index.size() - 3];
 
 				int ind = index.size()-1;
-
-				diff1 > diff2 ? index.erase(index.begin() + (ind - 1)), index.erase(index.begin() + (ind - 2)), index.push_back(i - 1) : index.pop_back();
-				/*if (diff1 == diff2)
+				//index.erase(index.begin() + (ind - 1)), index.erase(index.begin() + (ind - 2)),
+				if (diff1 > diff2)
 				{
-					(i - 1)>index.back() - 1:
-				}*/
+					index.push_back(i - 1);
+				}
+				else	if (diff1 == diff2)
+				{
+					(i - 1) > index.back() - 1 ? index.pop_back() : index.push_back(i - 1);
+				}
+				else //diff2>diff1
+				{
+					index.pop_back();
+				}
 			
 			}
-			else if(negative)
+			else 
 			{
 				index.pop_back();//remove last starting index of subseq.
 			}
@@ -87,16 +95,7 @@ int main()
 		endindex = index[index.size()-1] ;
 		check1 = true;
 	 }
-	//if (count == max) //comparing lenghts
-	//{
-	//	// start-end
-	//	diff1 = (v.size()-1) - index.back();
-	//	diff2 = (index.back() - 1) - (index.back() - 2);
-
-	//	int ind = index.back();
-
-	//	diff1 > diff2 ? index.erase(index.begin() + (ind - 1)), index.erase(index.begin() + (ind - 2)), index.push_back(v.size()-1) : index.pop_back();
-	//}
+	
 	 if (check1)
 	 {
 		 for (int i = startindex; i <= endindex; i++)
