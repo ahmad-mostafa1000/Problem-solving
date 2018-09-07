@@ -15,7 +15,7 @@ int main()
 		for (int j = 1; j < p-1; j++)
 		{
 			x *= n;
-			if (x%p == 1)
+			if (x%p == 1)//check 
 			{
 				check = false;
 				break;
