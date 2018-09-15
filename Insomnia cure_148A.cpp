@@ -5,7 +5,7 @@ using namespace std;
 int n, k, l, m;
 
 //we are looking for numbers that has multiples of l,m,n,k
-//and inc killed number and print it
+//and inc killed number and print it.
 int main()
 {
 	int d,killed=0;
