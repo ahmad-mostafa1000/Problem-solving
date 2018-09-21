@@ -15,6 +15,7 @@ int main()
 	bool check = true;
 	int k = 0;
 	char temp;
+	//sort words according to words size in descending
 	for (int i = 0; i < d.size(); i++)
 	{
 		if (i != 0 && check)
