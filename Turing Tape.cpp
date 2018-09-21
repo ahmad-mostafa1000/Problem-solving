@@ -12,9 +12,9 @@ int main()
 	for (int i = 0; i < 8; i++)
 	{
 		
-		revX <<= 1;//shift shmal
+		revX <<= 1;//shift left
 		revX |= x & 1;
-		x >>= 1;//shift  ymeen
+		x >>= 1;//shift  right
 
 	}
 	cout << x;
