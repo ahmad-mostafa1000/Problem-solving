@@ -6,7 +6,6 @@ int main()
 {
 	int  p, temp,n, count = 0;
 	vector<int> arr(300);
-
 	cin >> p;
 	cin >> n;
 	for (int i = 0; i < n; i++)
