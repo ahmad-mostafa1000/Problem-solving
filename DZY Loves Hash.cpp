@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
+//
 int main()
 {
 	int  p, temp,n, count = 0;
