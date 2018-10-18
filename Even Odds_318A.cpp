@@ -3,37 +3,25 @@
 #include<algorithm>
 #include<string>
 using namespace std;
-const int maximum = 100000;
 
 int main()
 {
-	int n, k, l = 0;
-	long int arranged[maximum];
-	cin >> n>>k;
-
-	for (int i = 1; i <= n; i++)
-	{
-		if (i % 2 != 0)
-		{
-			arranged[l] = i;
-			l++;
-		}
-
-	}
-	for (int i = 1; i <= n; i++)
-	{
-		if (i % 2 == 0)//even
-		{
-			arranged[l] = i;
-			l++;
-		}
+	long long int n, k, l = 0, middle;
+	cin >> n;
+		cin>>k;
+	(n % 2 == 0)?middle = n / 2: middle = (n / 2)+1;
 	
+
+	if (k<=middle) //oddnumber
+	{
+		cout << k * 2 - 1;
+
 	}
+	else //even number
+	{
+		cout << (k - middle) * 2;
 
-
-
-	cout << arranged[k-1];
-
+	}
 	system("pause");
 	return 0;
 }
