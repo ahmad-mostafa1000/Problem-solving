@@ -7,6 +7,7 @@ using namespace std;
 int main()
 {
     int n, max=5000, diff , a,b;
+	string answer;
 	cin >> n;
 		
 	for (int i = 0; i < n; i++)
@@ -15,20 +16,22 @@ int main()
 		diff = b - a;
 		if (diff > 0 || diff < 0)
 		{
-			cout << "rated";
+			cout<< "rated";
 			system("pause");
 			return 0;
 		}
 		if (a > max)
 		{
-			cout << "unrated";
-			system("pause");
-			return 0;
+			answer= "unrated";
+		
 		}
 		max = a;
 	}
-	cout << "maybe";
-
+	if(answer.size()<1)
+	{
+	answer= "maybe";
+	}
+	cout << answer;
 	system("pause");
 	return 0;
 }
