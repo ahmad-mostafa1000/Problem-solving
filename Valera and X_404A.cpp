@@ -1,11 +1,12 @@
 #include <iostream>
-
+#include<set>
 using namespace std;
 
 int main()
 {
 	int n;
-	char temp, diagonal, regular;
+	char temp;
+	set<char> diagonal, regular;
 	cin >> n;
 	for (int i = 0; i < n; i++)
 	{
@@ -14,44 +15,18 @@ int main()
 			cin >> temp;
 			if (i == j || i + j == n - 1)//diagonal & antidiagonal
 			{
-				if (i == 0 && j == 0)
-				{
-					diagonal = temp;
-				}
-				else if (temp != diagonal)
-				{
-					cout << "NO";
-					system("pause");
-					return 0;
-				}
+				diagonal.insert(temp);
 			}
 			else //regular
 			{
-
-
-				if (i == 0 && j == 1)
-				{
-					if (temp != diagonal)
-						regular = temp;
-					else
-					{
-						cout << "NO";
-						system("pause");
-						return 0;
-					}
-				}
-				else if (temp != regular)
-				{
-					cout << "NO";
-					system("pause");
-					return 0;
-				}
+				regular.insert(temp);
 			}
 
 		}
 	}
 
-	cout << "YES";
+	(regular.size() == 1 && diagonal.size() == 1 && *regular.begin() != *diagonal.begin()) ? cout << "YES" : cout << "NO";
+
 	system("pause");
 	return 0;
 }
