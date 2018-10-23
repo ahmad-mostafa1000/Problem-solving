@@ -4,25 +4,13 @@ using namespace std;
 
 int main()
 {
-	int n;
+	int n, arr[] = {8,4,2,6};
 	cin >> n;
 
 	if (n == 0)cout << 1;
-	else if(n % 4==1)
+	else  
 	{
-		cout <<8 ;
-	}
-	else if (n % 4 == 2)
-	{
-		cout << 4;
-	}
-	else if (n % 4 == 3)
-	{
-		cout << 2;
-	}
-	else if (n % 4 == 0)
-	{
-		cout << 6;
+		cout << arr[((n -1)% 4)];
 	}
 	system("pause");
 	return 0;
