@@ -4,16 +4,12 @@ using namespace std;
 
 int main()
 {
-	 long double n,m,a,w,l;
-	cin >> n>>m>>a;
+	long long int x;
+	 long float n, m, a, w, l;	
+	cin >> n >> m >> a;
 
-	w = a*ceil(n / a);
-	w=w/a;
-	l = a*ceil(m / a);
-	l = l / a;
-	cout << l + w ;
-
-	
+ x=ceil(n/a) * ceil(m/a);
+ cout << x;
 	system("pause");
 	return 0;
 }
